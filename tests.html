@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тесты · Архив феноменов</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="archive-box">
+    <div class="header">
+        <h1>Живые записи людей, видевших необъяснимое</h1>
+        <p>Дневники, тесты, справочник и карта фантомов</p>
+    </div>
+
+    <div class="menu">
+        <a href="index.html" class="button">ДНЕВНИКИ</a>
+        <a href="tests.html" class="button active">ТЕСТЫ</a>
+        <a href="glossary.html" class="button">СПРАВОЧНИК</a>
+        <a href="map.html" class="button">КАРТА ФАНТОМОВ</a>
+    </div>
+
+    <div class="tools-panel">
+        <div style="font-weight: bold; margin-bottom: 12px;">БЫСТРЫЕ ОБЪЯСНЕНИЯ</div>
+        <div class="btn-group">
+            <button class="arch-btn" id="explainZeigarnikBtn">Эффект Зейгарник</button>
+            <button class="arch-btn" id="explainPareidoliaBtn">Парейдолия</button>
+            <button class="arch-btn" id="explainCryptomnesiaBtn">Криптомнезия</button>
+            <button class="arch-btn" id="explainFalseMemoryBtn">Ложная память</button>
+            <button class="arch-btn" id="massHalBtn">Массовая галлюцинация</button>
+        </div>
+        <div class="output-area" id="infoOutput">Нажмите на кнопку для справки.</div>
+    </div>
+
+    <div class="test-card">
+        <div class="test-title">ТЕСТ №1: ЛОЖНАЯ ПАМЯТЬ</div>
+        <div class="test-sub">Основан на экспериментах Элизабет Лофтус (1974)</div>
+        <div style="background: #f5ede0; padding: 16px; margin-bottom: 24px; font-style: italic; border-left: 4px solid #ccb58a;">
+            <p><strong>Прочитайте и представьте как можно ярче:</strong></p>
+            <p style="margin-top: 8px;">«Когда вам было 5–6 лет, вы пошли с родителями в большой торговый центр. Вы отвлеклись на витрину с игрушками, а когда обернулись — родителей не было. Вам стало страшно. Вы заплакали. К вам подошла женщина в светлом пальто, взяла за руку и отвела к стойке администратора. По громкой связи объявили описание вашей одежды. Прибежала мама, вы обнялись. Женщина ушла.»</p>
+        </div>
+        <div class="question"><p>1. Появляется ли у вас ощущение, что это произошло с вами?</p>
+            <div class="option"><input type="radio" name="fm_q1" value="clear"> Да, чётко помню (могу описать детали)</div>
+            <div class="option"><input type="radio" name="fm_q1" value="vague"> Смутно, что-то похожее было</div>
+            <div class="option"><input type="radio" name="fm_q1" value="nothing"> Нет, этого не случалось</div>
+            <div class="option"><input type="radio" name="fm_q1" value="unsure"> Не знаю, возможно</div>
+        </div>
+        <div class="question"><p>2. Какие детали «всплыли»? (отметьте все)</p>
+            <div class="option"><input type="checkbox" name="fm_detail" value="clothes"> Цвет или фасон одежды</div>
+            <div class="option"><input type="checkbox" name="fm_detail" value="woman"> Внешность женщины</div>
+            <div class="option"><input type="checkbox" name="fm_detail" value="place"> Как выглядело место</div>
+            <div class="option"><input type="checkbox" name="fm_detail" value="sound"> Звуки (голос по связи, музыка)</div>
+            <div class="option"><input type="checkbox" name="fm_detail" value="emotion"> Конкретную эмоцию</div>
+            <textarea id="fm_other_detail" rows="2" placeholder="Другие детали..."></textarea>
+        </div>
+        <div class="question"><p>3. Насколько ярко вы можете «увидеть» эту сцену?</p>
+            <div class="option"><input type="radio" name="fm_vivid" value="10"> Абсолютно чётко, как кино</div>
+            <div class="option"><input type="radio" name="fm_vivid" value="7"> Довольно ярко</div>
+            <div class="option"><input type="radio" name="fm_vivid" value="4"> Смутно, как сон</div>
+            <div class="option"><input type="radio" name="fm_vivid" value="1"> Очень слабо</div>
+        </div>
+        <div class="question"><p>4. Случалось ли с вами реально потеряться в детстве?</p>
+            <div class="option"><input type="radio" name="fm_real" value="yes"> Да, было</div>
+            <div class="option"><input type="radio" name="fm_real" value="once"> Один раз</div>
+            <div class="option"><input type="radio" name="fm_real" value="no"> Нет</div>
+        </div>
+        <button class="test-btn" id="submitFalseMemory">АНАЛИЗ</button>
+        <div id="falseMemoryResult" class="result-box" style="display: none;"></div>
+    </div>
+
+    <div class="test-card">
+        <div class="test-title">ТЕСТ №2: ПАРЕЙДОЛИЯ</div>
+        <div class="test-sub">Способность видеть образы в случайных узорах</div>
+        <div class="question"><p>1. Посмотрите на стену, потолок или облака. Что видите?</p>
+            <div class="option"><input type="radio" name="pareid_q1" value="face"> Лицо / профиль</div>
+            <div class="option"><input type="radio" name="pareid_q1" value="animal"> Животное</div>
+            <div class="option"><input type="radio" name="pareid_q1" value="figure"> Фигуру, силуэт</div>
+            <div class="option"><input type="radio" name="pareid_q1" value="nothing"> Ничего, просто текстура</div>
+        </div>
+        <div class="question"><p>2. Как часто вы замечаете такие образы?</p>
+            <div class="option"><input type="radio" name="pareid_freq" value="often"> Несколько раз в неделю</div>
+            <div class="option"><input type="radio" name="pareid_freq" value="sometimes"> Пару раз в месяц</div>
+            <div class="option"><input type="radio" name="pareid_freq" value="rare"> Раз в год</div>
+            <div class="option"><input type="radio" name="pareid_freq" value="never"> Никогда</div>
+        </div>
+        <div class="question"><p>3. Если видите — как долго держится образ?</p>
+            <div class="option"><input type="radio" name="pareid_duration" value="seconds"> Несколько секунд</div>
+            <div class="option"><input type="radio" name="pareid_duration" value="minutes"> Минуты</div>
+            <div class="option"><input type="radio" name="pareid_duration" value="persist"> «Прилипает», долго не могу отвести взгляд</div>
+            <div class="option"><input type="radio" name="pareid_duration" value="none"> Не вижу</div>
+        </div>
+        <button class="test-btn" id="submitPareidolia">АНАЛИЗ</button>
+        <div id="pareidoliaResult" class="result-box" style="display: none;"></div>
+    </div>
+
+    <div class="test-card">
+        <div class="test-title">ТЕСТ №3: КРИПТОМНЕЗИЯ</div>
+        <div class="test-sub">Бессознательный плагиат — чужие мысли как свои</div>
+        <div class="question"><p>1. Вы придумали идею, но позже нашли её у кого-то. Ваша реакция?</p>
+            <div class="option"><input type="radio" name="crypto_q1" value="accuse"> «Меня обокрали»</div>
+            <div class="option"><input type="radio" name="crypto_q1" value="uncons"> «Возможно, я видел это и забыл»</div>
+            <div class="option"><input type="radio" name="crypto_q1" value="coincidence"> «Совпадение»</div>
+            <div class="option"><input type="radio" name="crypto_q1" value="panic"> «Это пугает, я не знаю, какие мысли мои»</div>
+        </div>
+        <div class="question"><p>2. Бывало, что вы «вспоминали» идею, а потом понимали — её сказал кто-то другой?</p>
+            <div class="option"><input type="radio" name="crypto_q2" value="often"> Да, не раз</div>
+            <div class="option"><input type="radio" name="crypto_q2" value="sometimes"> Пару раз</div>
+            <div class="option"><input type="radio" name="crypto_q2" value="never"> Никогда</div>
+        </div>
+        <div class="question"><p>3. Детское воспоминание: родители говорят, что этого не было, но вы «помните» детали.</p>
+            <div class="option"><input type="radio" name="crypto_q3" value="deny"> «Родители ошибаются»</div>
+            <div class="option"><input type="radio" name="crypto_q3" value="accept"> «Вероятно, перепутал источник»</div>
+            <div class="option"><input type="radio" name="crypto_q3" value="doubt"> «Не знаю, кому верить»</div>
+            <div class="option"><input type="radio" name="crypto_q3" value="similar"> «Часто путаю»</div>
+        </div>
+        <button class="test-btn" id="submitCrypto">АНАЛИЗ</button>
+        <div id="cryptoResult" class="result-box" style="display: none;"></div>
+    </div>
+
+    <div class="test-card">
+        <div class="test-title">ТЕСТ №4: ЭФФЕКТ ЗЕЙГАРНИК</div>
+        <div class="test-sub">Незавершённые действия и напряжение</div>
+        <div class="question"><p>1. Как долго помнится незавершённое дело?</p>
+            <div class="option"><input type="radio" name="zeig_q1" value="long"> Месяцами, пока не закончу</div>
+            <div class="option"><input type="radio" name="zeig_q1" value="weeks"> Несколько недель</div>
+            <div class="option"><input type="radio" name="zeig_q1" value="days"> Несколько дней</div>
+            <div class="option"><input type="radio" name="zeig_q1" value="short"> Легко переключаюсь</div>
+        </div>
+        <div class="question"><p>2. Если вас прервали на полуслове — что чувствуете?</p>
+            <div class="option"><input type="radio" name="zeig_q2" value="irritation"> Сильное раздражение</div>
+            <div class="option"><input type="radio" name="zeig_q2" value="tension"> Лёгкое напряжение</div>
+            <div class="option"><input type="radio" name="zeig_q2" value="calm"> Всё равно</div>
+            <div class="option"><input type="radio" name="zeig_q2" value="obsession"> Мысль не отпускает</div>
+        </div>
+        <button class="test-btn" id="submitZeigarnik">АНАЛИЗ</button>
+        <div id="zeigarnikResult" class="result-box" style="display: none;"></div>
+    </div>
+
+    <footer>Архив оцифрован в 1989 году. Феномены имеют научное объяснение.</footer>
+</div>
+
+<script>
+    const outputDiv = document.getElementById('infoOutput');
+    document.getElementById('explainZeigarnikBtn')?.addEventListener('click', () => outputDiv.innerHTML = "ЭФФЕКТ ЗЕЙГАРНИК (1927): незавершённые действия запоминаются на 90% лучше завершённых.");
+    document.getElementById('explainPareidoliaBtn')?.addEventListener('click', () => outputDiv.innerHTML = "ПАРЕЙДОЛИЯ — способность мозга достраивать знакомые образы в случайных узорах. Свойственна 90% людей.");
+    document.getElementById('explainCryptomnesiaBtn')?.addEventListener('click', () => outputDiv.innerHTML = "КРИПТОМНЕЗИЯ — бессознательный плагиат, когда чужая мысль кажется своей.");
+    document.getElementById('explainFalseMemoryBtn')?.addEventListener('click', () => outputDiv.innerHTML = "ЛОЖНАЯ ПАМЯТЬ (Лофтус, 1974): 25% людей можно внушить вымышленное воспоминание.");
+    document.getElementById('massHalBtn')?.addEventListener('click', () => outputDiv.innerHTML = "МАССОВАЯ ГАЛЛЮЦИНАЦИЯ (Belle-Poule, 1846): вся команда видела плот с людьми. Механизм: взаимовнушение.");
+
+    const submitFM = document.getElementById('submitFalseMemory');
+    const fmResult = document.getElementById('falseMemoryResult');
+    submitFM?.addEventListener('click', () => {
+        const q1 = document.querySelector('input[name="fm_q1"]:checked')?.value;
+        const vivid = document.querySelector('input[name="fm_vivid"]:checked')?.value;
+        const real = document.querySelector('input[name="fm_real"]:checked')?.value;
+        const details = document.querySelectorAll('input[name="fm_detail"]:checked').length;
+        const other = document.getElementById('fm_other_detail')?.value.trim() || '';
+        if (!q1 || !vivid || !real) { fmResult.style.display = 'block'; fmResult.innerHTML = "⚠️ Ответьте на все вопросы."; return; }
+        let score = 0, analysis = "";
+        if (q1 === 'clear') { score += 40; analysis += "Чёткое воспоминание. "; }
+        else if (q1 === 'vague') { score += 25; analysis += "Смутная знакомость. "; }
+        else if (q1 === 'unsure') { score += 10; analysis += "Сомнения. "; }
+        if (details >= 3) { score += 25; analysis += "Много деталей. "; }
+        else if (details >= 1) score += 12;
+        if (vivid === '10') { score += 20; analysis += "Очень яркий образ. "; }
+        else if (vivid === '7') score += 12;
+        if (real === 'yes') score += 10;
+        if (other.length > 15) score += 10;
+        let verdict = score >= 70 ? "ВЫСОКАЯ ВНУШАЕМОСТЬ" : (score >= 35 ? "СРЕДНЯЯ" : "НИЗКАЯ");
+        fmResult.style.display = 'block';
+        fmResult.innerHTML = `<strong>📊 ${verdict}</strong><br><br>${analysis}<br><br>25% «вспоминают» вымышленную историю.`;
+    });
+
+    const submitPareid = document.getElementById('submitPareidolia');
+    const pareidResult = document.getElementById('pareidoliaResult');
+    submitPareid?.addEventListener('click', () => {
+        const q1 = document.querySelector('input[name="pareid_q1"]:checked')?.value;
+        const freq = document.querySelector('input[name="pareid_freq"]:checked')?.value;
+        const dur = document.querySelector('input[name="pareid_duration"]:checked')?.value;
+        if (!q1 || !freq || !dur) { pareidResult.style.display = 'block'; pareidResult.innerHTML = "⚠️ Ответьте на все вопросы."; return; }
+        let score = 0;
+        if (q1 !== 'nothing') score += 2;
+        if (freq === 'often') score += 2;
+        else if (freq === 'sometimes') score += 1;
+        if (dur === 'persist') score += 2;
+        else if (dur === 'minutes') score += 1;
+        let verdict = score >= 4 ? "ВЫСОКАЯ" : (score >= 2 ? "СРЕДНЯЯ" : "НИЗКАЯ ЧУВСТВИТЕЛЬНОСТЬ");
+        pareidResult.style.display = 'block';
+        pareidResult.innerHTML = `<strong>📊 ${verdict}</strong><br><br>Парейдолия свойственна 90% людей.`;
+    });
+
+    const submitCrypto = document.getElementById('submitCrypto');
+    const cryptoResult = document.getElementById('cryptoResult');
+    submitCrypto?.addEventListener('click', () => {
+        const q1 = document.querySelector('input[name="crypto_q1"]:checked')?.value;
+        const q2 = document.querySelector('input[name="crypto_q2"]:checked')?.value;
+        const q3 = document.querySelector('input[name="crypto_q3"]:checked')?.value;
+        if (!q1 || !q2 || !q3) { cryptoResult.style.display = 'block'; cryptoResult.innerHTML = "⚠️ Ответьте на все вопросы."; return; }
+        let score = 0;
+        if (q1 === 'uncons' || q1 === 'panic') score += 2;
+        if (q2 === 'often') score += 2;
+        else if (q2 === 'sometimes') score += 1;
+        if (q3 === 'similar' || q3 === 'accept') score += 2;
+        let verdict = score >= 4 ? "ВЫСОКАЯ" : (score >= 2 ? "УМЕРЕННАЯ" : "НИЗКАЯ ПРЕДРАСПОЛОЖЕННОСТЬ");
+        cryptoResult.style.display = 'block';
+        cryptoResult.innerHTML = `<strong>📊 ${verdict}</strong><br><br>Криптомнезия — нормальное свойство памяти.`;
+    });
+
+    const submitZeig = document.getElementById('submitZeigarnik');
+    const zeigResult = document.getElementById('zeigarnikResult');
+    submitZeig?.addEventListener('click', () => {
+        const q1 = document.querySelector('input[name="zeig_q1"]:checked')?.value;
+        const q2 = document.querySelector('input[name="zeig_q2"]:checked')?.value;
+        if (!q1 || !q2) { zeigResult.style.display = 'block'; zeigResult.innerHTML = "⚠️ Ответьте на оба вопроса."; return; }
+        let tension = (q1 === 'long' || q2 === 'obsession') ? "высокое напряжение" : (q1 === 'weeks' || q2 === 'irritation') ? "среднее напряжение" : "низкое напряжение";
+        zeigResult.style.display = 'block';
+        zeigResult.innerHTML = `<strong>📊 ВАШ УРОВЕНЬ: ${tension}</strong><br><br>Эффект открыт Блюмой Зейгарник в 1927 году.`;
+    });
+</script>
+</body>
+</html>

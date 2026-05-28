@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карта фантомов · Архив феноменов</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="archive-box">
+    <div class="header">
+        <h1>Живые записи людей, видевших необъяснимое</h1>
+        <p>Дневники, тесты, справочник и карта фантомов</p>
+    </div>
+
+    <div class="menu">
+        <a href="index.html" class="button">ДНЕВНИКИ</a>
+        <a href="tests.html" class="button">ТЕСТЫ</a>
+        <a href="glossary.html" class="button">СПРАВОЧНИК</a>
+        <a href="map.html" class="button active">КАРТА ФАНТОМОВ</a>
+    </div>
+
+    <div class="map-container">
+        <div class="legend">
+            <div class="legend-item"><div class="marker-dot red"></div> Миражи / оптические обманы</div>
+            <div class="legend-item"><div class="marker-dot blue"></div> Эффекты памяти</div>
+            <div class="legend-item"><div class="marker-dot green"></div> Парейдолия</div>
+            <div class="legend-item"><div class="marker-dot purple"></div> Хрономиражи</div>
+            <div class="legend-item"><div class="marker-dot orange"></div> Массовые галлюцинации</div>
+        </div>
+        <div class="map-grid">
+            <div class="region-card" data-region="sahara">
+                <h3>САХАРА · Вади-эль-Хадра</h3>
+                <p>Северная Африка, 1981 год. Миражи-оазисы.</p>
+                <div class="marker-list">
+                    <li><span class="small-dot" style="background:#c0392b;"></span> Мираж с пальмами и водой — Анри Дюбуа</li>
+                    <li><span class="small-dot" style="background:#c0392b;"></span> Тепловая инверсия</li>
+                </div>
+            </div>
+            <div class="region-card" data-region="crete">
+                <h3>О. КРИТ · Франка-Кастелло</h3>
+                <p>Греция, 1942–1985. «Дроссолидес».</p>
+                <div class="marker-list">
+                    <li><span class="small-dot" style="background:#8e44ad;"></span> Хрономираж: фигуры воинов</li>
+                    <li><span class="small-dot" style="background:#e67e22;"></span> Массовая галлюцинация</li>
+                </div>
+            </div>
+            <div class="region-card" data-region="nuari">
+                <h3>НУАРИ · склад №7</h3>
+                <p>Колониальный округ, 1983 год.</p>
+                <div class="marker-list">
+                    <li><span class="small-dot" style="background:#27ae60;"></span> Парейдолия — лик старухи</li>
+                    <li><span class="small-dot" style="background:#27ae60;"></span> Сторож Бамба Коне</li>
+                </div>
+            </div>
+            <div class="region-card" data-region="rjev">
+                <h3>РЖЕВСКИЙ РАЙОН</h3>
+                <p>Россия, 1998 год.</p>
+                <div class="marker-list">
+                    <li><span class="small-dot" style="background:#8e44ad;"></span> Хрономираж — цепи солдат</li>
+                    <li><span class="small-dot" style="background:#e67e22;"></span> Коллективное наблюдение</li>
+                </div>
+            </div>
+            <div class="region-card" data-region="atlantic">
+                <h3>АТЛАНТИКА · Belle-Poule</h3>
+                <p>1846 год, фрегат Франции.</p>
+                <div class="marker-list">
+                    <li><span class="small-dot" style="background:#e67e22;"></span> Массовая галлюцинация</li>
+                    <li><span class="small-dot" style="background:#e67e22;"></span> 100+ свидетелей</li>
+                </div>
+            </div>
+            <div class="region-card" data-region="berlin">
+                <h3>БЕРЛИН · кафе Зейгарник</h3>
+                <p>1927 год, место открытия эффекта.</p>
+                <div class="marker-list">
+                    <li><span class="small-dot" style="background:#2980b9;"></span> Официанты помнят незакрытые заказы</li>
+                    <li><span class="small-dot" style="background:#2980b9;"></span> Эффект Зейгарник</li>
+                </div>
+            </div>
+        </div>
+        <div class="detail-panel" id="detailPanel">
+            <div class="detail-title">📍 Нажмите на регион</div>
+            <div class="detail-text">Выберите место на карте выше, чтобы увидеть полное досье по феномену.</div>
+            <div class="detail-photo" id="detailPhoto"></div>
+        </div>
+    </div>
+
+    <footer>Архив оцифрован в 1989 году. Феномены имеют научное объяснение.</footer>
+</div>
+
+<script>
+    const regionData = {
+        sahara: { title: "ДЕЛО №1: МИРАЖ В ВАДИ-ЭЛЬ-ХАДРА", text: "14 ноября 1981 года гидролог Анри Дюбуа зафиксировал в пустыне иллюзию озера с пальмами. Группа шла на мираж два часа, после чего он исчез. Тепловая инверсия создала идеальное зеркальное отражение неба. Дюбуа в дневнике написал: «Я боюсь собственных глаз. Записываю, чтобы помнить: я не сумасшедший, просто пустыня играет со светом».", photo: "images/desert.jpg" },
+        crete: { title: "ДЕЛО №2: ДРОССОЛИДЕС — ПРИЗРАЧНЫЕ ВОИНЫ", text: "Феномен наблюдается у замка Франка-Кастелло на Крите с XIV века. В 1942 году немецкий патруль открыл огонь по фигурам воинов, появившимся из тумана — пули прошли сквозь. Явление повторяется каждое лето на рассвете. Очевидцы слышали лязг оружия и крики.", photo: "images/soldiers.jpg" },
+        nuari: { title: "ДЕЛО №3: ЛИК НА СТЕНЕ СКЛАДА №7", text: "В мае 1983 года сторож Бамба Коне в течение трёх ночей видел на стене склада чёткое человеческое лицо — лик старухи. При дневном свете — только трещины и отслоения краски. Психиатр подтвердил диагноз «парейдолия».", photo: "images/par.jpg" },
+        rjev: { title: "ДЕЛО №4: ПРИЗРАКИ РЖЕВСКОГО КОТЛА", text: "Сентябрь 1998 года. Поисковый отряд увидел цепи солдат в шинелях, идущих в атаку. Слышали «ура» и разрывы. Фантомы держались 15 минут. Утром нашли останки четырёх красноармейцев в том же секторе.", photo: "images/hrono.jpg" },
+        atlantic: { title: "ДЕЛО №5: ФРЕГАТ BELLE-POULE (1846)", text: "В 1846 году вся команда французского фрегата в течение нескольких часов видела плот с людьми, слышала крики о помощи. Отправили шлюпку — подошли к пустым брёвнам. Механизм: массовая галлюцинация.", photo: "images/atl.jpg" },
+        berlin: { title: "ДЕЛО №6: КАФЕ ЗЕЙГАРНИК (1927)", text: "Блюма Зейгарник заметила: официанты отлично помнят незакрытые заказы, но забывают оплаченные. Экспериментально доказано: незавершённые действия запоминаются на 90% лучше завершённых.", photo: "images/zeg.jpg" }
+    };
+
+    const cards = document.querySelectorAll('.region-card');
+    const detailTitle = document.querySelector('#detailPanel .detail-title');
+    const detailText = document.querySelector('#detailPanel .detail-text');
+    const detailPhoto = document.getElementById('detailPhoto');
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            const region = card.getAttribute('data-region');
+            const data = regionData[region];
+            if (data) {
+                detailTitle.innerHTML = data.title;
+                detailText.innerHTML = data.text;
+                detailPhoto.innerHTML = `<img src="${data.photo}" alt="${region}" style="max-width:200px; border:1px solid #ddd;">`;
+            }
+        });
+    });
+</script>
+</body>
+</html>
